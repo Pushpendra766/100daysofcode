@@ -1,18 +1,21 @@
+#This game is guessing game where you have to guess which celebrity or brand have more Insta followers
 from art import logo,vs
 from game_data import data
 import random
 from replit import clear
 
+#pick a account from top 50 listed
 def pick_accounts():
   return random.choice(data)
 
+#compare followers with user choice
 def compare(choice_A,choice_B,choice):
   if choice_A >= choice_B and choice == 'A':
     return True
   elif choice_A <= choice_B and choice == 'B':
     return True
    
-
+#Shows the current score
 def update_score(ans,score):
   if ans == True:
     print(logo)
