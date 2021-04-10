@@ -13,7 +13,7 @@ def create_turtle(colour, position):
 is_race_on = False
 screen = Screen()
 screen.setup(width=500, height=400)
-user_bet = screen.textinput(title="Make your bet.", prompt="Which turtle will win the race? Enter a color: ")
+user_bet = screen.textinput(title="Make your bet.", prompt="Which turtle will win the race? Enter a color \n ('red', 'orange', 'blue', 'green', 'purple', 'yellow'): ")
 colours = ['red', 'orange', 'blue', 'green', 'purple', 'yellow']
 turtles = []
 pos = -100
