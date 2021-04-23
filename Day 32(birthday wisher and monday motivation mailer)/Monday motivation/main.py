@@ -1,4 +1,4 @@
-import random
+mimport random
 import datetime as td
 import smtplib
 now = td.datetime.now()
@@ -18,7 +18,7 @@ if weekday == 4:
 
             connection.sendmail(
                 from_addr=user_name,
-                to_addrs="codestrong7@yahoo.com",
+                to_addrs="example@yahoo.com",
                 msg=f"Subject:Motivation\n\n{message}"
             )
 
