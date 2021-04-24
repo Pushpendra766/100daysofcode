@@ -43,7 +43,7 @@ def iss_in_range():
 
 
 def send_email():
-    with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
+    with smtplib.SMTP("your email provider's smtp address here") as connection:
         connection.starttls()
         connection.login(user=USER, password=PASS)
         connection.sendmail(
