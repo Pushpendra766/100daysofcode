@@ -1,11 +1,12 @@
 import requests
 from datetime import datetime
 import smtplib
+import time
 
-MY_LONGITUDE = 76.401588
-MY_LATITUDE = 23.640445
-# USER = "codestrong7@yahoo.com"
-# PASS = "gioteyrpfxeowdcq"
+MY_LONGITUDE = [enter you longitude here]
+MY_LATITUDE = [enter you latitude here]
+USER = "sender email here"
+PASS = "sender password here"
 
 parameters = {
         "lng": MY_LONGITUDE,
@@ -44,15 +45,16 @@ def iss_in_range():
 def send_email():
     with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
         connection.starttls()
-        connection.login(user="codestrong7@yahoo.com", password="gioteyrpfxeowdcq")
+        connection.login(user=USER, password=PASS)
         connection.sendmail(
-            from_addr="codestrong7@yahoo.com",
-            to_addrs="codestrong7@gmail.com",
+            from_addr=USER,
+            to_addrs=PASS, # sending email to self
             msg="Subject:ISS in your location\n\nLook up the sky."
         )
 
 
 while True:
+    time.sleep(60) # refreshes every 60 seconds
     if is_night():
         print("It is night")
         iss_loc = iss_in_range()
