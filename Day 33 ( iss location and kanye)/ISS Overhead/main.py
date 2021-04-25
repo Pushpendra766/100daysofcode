@@ -3,6 +3,7 @@ from datetime import datetime
 import smtplib
 import time
 
+# you can search for your location's longitude and latitude on google
 MY_LONGITUDE = [enter you longitude here]
 MY_LATITUDE = [enter you latitude here]
 USER = "sender email here"
@@ -30,8 +31,6 @@ def iss_in_range():
     loc_data = response_loc.json()
     latitude = float(loc_data['iss_position']['latitude'])
     longitude = float(loc_data['iss_position']['longitude'])
-    # longitude = 79
-    # latitude = 20
     long_min = longitude-5
     long_max = longitude+5
     lat_min = latitude-5
@@ -43,7 +42,7 @@ def iss_in_range():
 
 
 def send_email():
-    with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
+    with smtplib.SMTP("your email provider's smtp address here") as connection:
         connection.starttls()
         connection.login(user=USER, password=PASS)
         connection.sendmail(
